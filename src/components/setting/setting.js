@@ -99,7 +99,7 @@ const Setting = () => {
       try {
         const email = newEmail;
         const response = await fetch(
-          "http://localhost:5000/users/auth/sendOTP",
+          "https://whatsapp-clone-i6bl.onrender.com/users/auth/sendOTP",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -171,7 +171,7 @@ const Setting = () => {
 
     try {
       const response = await axios.patch(
-        "http://localhost:5000/users/auth/update-user",
+        "https://whatsapp-clone-i6bl.onrender.com/users/auth/update-user",
         formData,
         {
           headers: {

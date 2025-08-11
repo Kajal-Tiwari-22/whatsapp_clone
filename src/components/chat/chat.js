@@ -216,7 +216,7 @@ const Chat = () => {
     formData.append("file", selectedFile);
 
     try {
-      const res = await fetch("http://localhost:5000/upload-file", {
+      const res = await fetch("https://whatsapp-clone-i6bl.onrender.com/upload-file", {
         method: "POST",
         body: formData,
       });
@@ -227,7 +227,7 @@ const Chat = () => {
         // Ensure the URL is properly formatted
         const fileUrl = result.fileUrl.startsWith('http') 
           ? result.fileUrl 
-          : `http://localhost:5000${result.fileUrl}`;
+          : `https://whatsapp-clone-i6bl.onrender.com${result.fileUrl}`;
         return fileUrl;
       } else {
         console.error("Error uploading file:", result.message);
@@ -365,7 +365,7 @@ const Chat = () => {
   const saveChatList = async (userId, chatPartnerEmail, lastMessage) => {
     try {
       const response = await fetch(
-        "http://localhost:5000/GChat/chatlists/add-chatlist",
+        "https://whatsapp-clone-i6bl.onrender.com/GChat/chatlists/add-chatlist",
         {
           method: "POST",
           headers: {

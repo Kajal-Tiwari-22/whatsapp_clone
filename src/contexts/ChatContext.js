@@ -19,7 +19,7 @@ const chatContext = createContext(null);
 let socket;
 const getSocket = () => {
   if (!socket) {
-    socket = io("http://localhost:5000");
+    socket = io("https://whatsapp-clone-i6bl.onrender.com");
   }
   return socket;
 };
@@ -71,7 +71,7 @@ const ChatContext = ({ children }) => {
     if (user.userId) {
       try {
         const response = await fetch(
-          `http://localhost:5000/users/chatlists/chat-list/${user.userId}`
+          `https://whatsapp-clone-i6bl.onrender.com/users/chatlists/chat-list/${user.userId}`
         );
         const data = await response.json();
 
@@ -87,7 +87,7 @@ const ChatContext = ({ children }) => {
 
   const markMessagesAsSeen = async (chatId) => {
     try {
-      await axios.put(`http://localhost:5000/users/chats/mark-seen/${chatId}`, {
+      await axios.put(`https://whatsapp-clone-i6bl.onrender.com/users/chats/mark-seen/${chatId}`, {
         currentUserId,
       });
 
@@ -118,7 +118,7 @@ const ChatContext = ({ children }) => {
     if (peerId) {
       try {
         const response = await fetch(
-          `http://localhost:5000/users/chats/${user.userId}/${peerId}`
+          `https://whatsapp-clone-i6bl.onrender.com/users/chats/${user.userId}/${peerId}`
         );
         if (!response.ok) throw new Error("Failed to fetch messages");
 
@@ -136,7 +136,7 @@ const ChatContext = ({ children }) => {
     if (messageId && senderId) {
       try {
         const response = await fetch(
-          `http://localhost:5000/users/chats/delete-message/${messageId}?senderId=${senderId}`,
+          `https://whatsapp-clone-i6bl.onrender.com/users/chats/delete-message/${messageId}?senderId=${senderId}`,
           {
             method: "DELETE",
           }
@@ -158,7 +158,7 @@ const ChatContext = ({ children }) => {
       const userId = currentUserId;
       try {
         const response = await fetch(
-          `http://localhost:5000/users/chats/delete-chat/${chatId}`,
+          `https://whatsapp-clone-i6bl.onrender.com/users/chats/delete-chat/${chatId}`,
           {
             method: "DELETE",
             headers: {
@@ -184,7 +184,7 @@ const ChatContext = ({ children }) => {
     if (selectedChatUserId) {
       try {
         const response = await fetch(
-          `http://localhost:5000/users/auth/block-user/${userId}`,
+          `https://whatsapp-clone-i6bl.onrender.com/users/auth/block-user/${userId}`,
           {
             method: "POST",
             headers: {
@@ -218,7 +218,7 @@ const ChatContext = ({ children }) => {
     }
     try {
       const response = await fetch(
-        `http://localhost:5000/users/auth/blocked-users/${userId}`
+        `https://whatsapp-clone-i6bl.onrender.com/users/auth/blocked-users/${userId}`
       );
       if (!response.ok) throw new Error("Failed to fetch blocked users");
       const data = await response.json();
@@ -242,7 +242,7 @@ const ChatContext = ({ children }) => {
       setIsRequesting(true);
       try {
         const response = await fetch(
-          "http://localhost:5000/users/send-call-back-request",
+          "https://whatsapp-clone-i6bl.onrender.com/users/send-call-back-request",
           {
             method: "POST",
             headers: {

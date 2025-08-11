@@ -81,7 +81,7 @@ function UpdatePassword() {
         setIsLoading(true);
         if (uData.email && uData.password) {
             try {
-                const response = await fetch('http://localhost:5000/users/auth/updatePass', {
+                const response = await fetch('https://whatsapp-clone-i6bl.onrender.com/users/auth/updatePass', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

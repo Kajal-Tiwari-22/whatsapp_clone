@@ -109,7 +109,7 @@ function Forgot() {
     if (email) {
       try {
         const response = await fetch(
-          "http://localhost:5000/users/auth/sendResetPassOTP",
+          "https://whatsapp-clone-i6bl.onrender.com/users/auth/sendResetPassOTP",
           {
             method: "POST",
             headers: {

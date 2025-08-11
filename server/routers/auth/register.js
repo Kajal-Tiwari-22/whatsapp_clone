@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 const salt = 10;
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:5000/profiles';
+const BASE_URL = process.env.BASE_URL || 'https://whatsapp-clone-i6bl.onrender.com/profiles';
 
 // Configure multer for profile image upload during registration
 const storage = multer.diskStorage({

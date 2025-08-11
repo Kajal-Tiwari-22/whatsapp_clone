@@ -113,7 +113,7 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.error("MongoDB connection error:", err));
 
 // File upload
-const BASE_URL = process.env.BASE_URL || "http://localhost:5000/chat";
+const BASE_URL = process.env.BASE_URL || "https://whatsapp-clone-i6bl.onrender.com/chat";
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const userId = req.body.senderId;
