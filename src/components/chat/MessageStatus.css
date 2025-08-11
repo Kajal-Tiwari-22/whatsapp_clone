@@ -1,0 +1,32 @@
+.message-status {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.message-status svg {
+  transition: color 0.2s ease;
+}
+
+.message-status.sent {
+  color: #FFFFFF;
+}
+
+.message-status.delivered {
+  color: #FFFFFF;
+}
+
+.message-status.read {
+  color: #34B7F1;
+}
+
+.chats-messages-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.message-status-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
