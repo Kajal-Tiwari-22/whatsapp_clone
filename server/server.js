@@ -38,10 +38,7 @@ const app = express();
 // CORS - Fixed to include PATCH method
 app.use(cors({
   origin: [
-    "http://localhost:3000",
-    "http://localhost:5000",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:5000"
+   "https://whatsapp-clone-iota-two.vercel.app"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
@@ -60,6 +57,10 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res.send("Server is running 🚀");
+});
 
 // Static files
 app.use("/chat", express.static(path.join(__dirname, "Users-files/users-chat-files")));
@@ -88,10 +89,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "http://localhost:3000",
-      "http://localhost:5000",
-      "http://127.0.0.1:3000",
-      "http://127.0.0.1:5000"
+     "https://whatsapp-clone-iota-two.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true
